@@ -1,0 +1,628 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  display: block;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+header,
+nav,
+div,
+section,
+a {
+  display: block;
+}
+#ereyomiBigBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/*
+    header 
+*/
+.ereTopBox {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+.btnHeader {
+  width: 100%;
+  z-index: 20;
+}
+.btnHeader h3 {
+  float: left;
+  color: rgb(0, 0, 0);
+  padding: 3px 8px;
+  font-size: 20px;
+  margin: 12px 10px 0px 10px;
+  cursor: pointer;
+}
+.btnHeader h3:hover {
+  color: gray;
+}
+.ereBtn {
+  float: right;
+  padding: 5px 10px;
+  border: none;
+  background: white;
+  color: black;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 20px;
+}
+.ereBtn:hover {
+  color: white;
+  background: black;
+}
+.ereMenu {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0px;
+  background: white;
+  overflow: hidden;
+  transform: translateY(-30%);
+  opacity: 0;
+  transition: all 2s;
+}
+.ShowMenu {
+  transform: translateY(0%);
+  opacity: 1;
+  height: 200px;
+}
+.ereMenu .myMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ereMenu li a {
+  text-align: center;
+  display: block;
+  padding: 10px 30px;
+  color: black;
+  transition: all 1s;
+}
+
+.ereMenu li a:hover {
+  color: grey;
+}
+
+.ereMenu li a:hover::before {
+  content: "[  ";
+}
+.ereMenu li a:hover::after {
+  content: "  ]";
+}
+
+/*
+hover effect not work on first child
+*/
+.ereMenu ul > li:first-child > a:hover::after,
+.ereMenu ul > li:first-child > a:hover::before {
+  content: "";
+}
+
+/*
+
+*/
+#ereBody {
+  width: 100%;
+  height: auto;
+}
+.ereRow {
+  width: 100%; //100vw
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.mydetails {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.mydetails {
+  margin-top: 55px;
+  height: auto;
+  background: url("img/cap.jpg") no-repeat top center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  //background-attachment: fixed;
+  padding: 220px 0px;
+}
+.detailsBox {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.detailsBox h2 {
+  font-size: 20px;
+  margin-bottom: 0;
+  color: #6d6d6d;
+}
+.detailsBox p {
+  width: 100%;
+  color: #6d6d6d;
+  font-size: 20px;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.detailsBox p span {
+  color: white;
+}
+.detailsBox a {
+  width: 70%;
+  margin-top: 10px;
+  text-align: center;
+  color: #6d6d6d;
+  border: 2px solid #6d6d6d;
+  border-radius: 20px;
+  padding: 7px 10px;
+  background: none;
+  cursor: pointer;
+  transition: all 1s;
+}
+.detailsBox a:hover {
+  background: #6d6d6d;
+  color: white;
+  width: 80%;
+}
+
+.typed-text {
+  font-weight: normal;
+  color: white;
+}
+.cursor {
+  display: inline-block;
+  width: 3px;
+  background: #ccc;
+  margin-left: 0.1rem;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0% {
+    background: #ccc;
+  }
+  49% {
+    background: #ccc;
+  }
+  50% {
+    background: transparent;
+  }
+  99% {
+    background: transparent;
+  }
+  100% {
+    background: #ccc;
+  }
+}
+.cursor.typing {
+  animation: none;
+}
+.about {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.aboutBox {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.boldIt {
+  font-weight: bold;
+  width: 31%;
+}
+td {
+  font-size: 12px;
+}
+.aboutImg {
+  width: 100%;
+}
+.aboutImg img {
+  width: 100%;
+  object-fit: cover;
+}
+#stacks {
+  padding: 20px 0px;
+}
+.stackListBox {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.full {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 5px;
+  background: gray;
+}
+.percentload {
+  height: 5px;
+  background: black;
+}
+.percentBox {
+  display: block;
+  width: 30px !important;
+  height: 25px;
+  background: black;
+  margin-top: -10px;
+  color: white;
+  padding: 5px;
+  font-size: 12px;
+}
+.javascript .percentload {
+  width: 65%;
+}
+.javascript .percentBox {
+  width: 8%;
+}
+.PHP .percentload {
+  width: 56%;
+}
+.PHP .percentBox {
+  width: 8%;
+}
+.C .percentload {
+  width: 50%;
+}
+.C .percentBox {
+  width: 8%;
+}
+.Html .percentload {
+  width: 80%;
+}
+.html .percentBox {
+  width: 8%;
+}
+.lang {
+  margin: 5px 0px;
+}
+.stacksBtn {
+  width: 100%;
+  text-align: left;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  background: black;
+  color: white;
+}
+.stacksBtn:after {
+  content: "\002B";
+  float: right;
+  border: none;
+  color: white;
+  font-size: 10px;
+}
+.active,
+.stacksBtn:hover {
+  background: rgb(54, 54, 54);
+}
+.active:after {
+  content: "\2212";
+}
+.panel {
+  display: block;
+  height: 0px;
+  width: 100%;
+  color: rgb(46, 46, 46);
+  overflow: hidden;
+  transition: height 0.5s;
+}
+.panel ul {
+  padding: 10px;
+}
+/*
+.slidein {
+  animation-name: slideit;
+  -webkit-animation-name: slideit;
+  visibility:visible;
+}
+.slideout {
+  animation: none;
+}
+@keyframes slideit {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+*/
+h2 {
+  margin-top: 30px;
+}
+hr {
+  margin-top: 2px;
+  margin-bottom: 40px;
+  width: 15%;
+  color: black;
+  border-color: black;
+}
+.eduMain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.info {
+  width: 100%;
+  background: white;
+  margin-bottom: 20px;
+  padding: 5px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1), 0 3px 2px 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid white;
+  transition: all 2s;
+}
+.info h3 {
+  margin: 5px 0px;
+  font-size: 15px;
+}
+.info:hover {
+  border-bottom: 4px solid black;
+}
+#Exp .info h3 {
+  margin: 8px 0px;
+}
+.projBox .info,
+.msg .info {
+  border-bottom: none;
+}
+.projBox .info:hover,
+.msg .info:hover {
+  border-bottom: none;
+}
+.info button {
+  border: none;
+  border-radius: 5px;
+  background: black;
+  padding: 8px 15px;
+  margin: 8px 0px;
+  cursor: pointer;
+}
+.info button a {
+  color: white;
+}
+.info button:hover {
+  background: tomato;
+}
+.slidesBox {
+  overflow: hidden;
+}
+.ereSlides {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: none;
+}
+
+.slideImg {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+.slideImg img {
+  width: 100%;
+  object-fit: cover;
+}
+.ereSlides p {
+  text-align: center;
+  padding: 10px 30px;
+}
+.ereDots {
+  width: 100%;
+  text-align: center;
+}
+.ereDot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background: rgb(32, 32, 32);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background 0.6s ease;
+}
+.activeDot {
+  background: gray;
+}
+.msg label {
+  color: black;
+  margin: 10px;
+}
+.msg input[type="text"],
+.msg textarea,
+.msg input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: none; //vertical
+}
+.msg textarea {
+  height: 200px;
+}
+.msg input[type="submit"] {
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.msg input[type="submit"]:hover {
+  background: #383838;
+}
+.msg .info {
+  background: none;
+}
+.msg input::placeholder,
+.msg textarea::placeholder {
+  color: #383838;
+}
+.msg .info form {
+  padding: 10px;
+}
+.foot {
+  background: black;
+  justify-content: center;
+}
+.foot p {
+  margin: 5px;
+  color: white;
+}
+
+@media screen and (min-width: 350px) {
+  .slideImg {
+    height: 200px;
+  }
+}
+@media screen and (min-width: 450px) {
+  .slideImg {
+    height: 250px;
+    margin: 0 auto;
+    width: 60%;
+  }
+}
+@media screen and (min-width: 600px) {
+  hr {
+    width: 8%;
+  }
+  .ereTopBox {
+    flex-direction: row;
+  }
+  .ereBtn {
+    display: none;
+  }
+  .btnHeader {
+    width: 20%;
+  }
+  .ereMenu {
+    width: 80%;
+    transform: translateY(0%);
+    opacity: 1;
+    height: auto;
+    padding: 10px 0px;
+  }
+  .ereMenu .myMenu {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .ereMenu li a {
+    padding: 10px 10px;
+  }
+  .detailsBox a {
+    padding: 10px 15px;
+  }
+  .detailsBox a:hover {
+    width: 40%;
+  }
+  .javascript .percentload {
+    width: 75%;
+  }
+  .PHP .percentload {
+    width: 64%;
+  }
+  .C .percentload {
+    width: 54%;
+  }
+  .Html .percentload {
+    width: 90%;
+  }
+  .slideImg {
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 700px) {
+  #about .aboutBox {
+    justify-content: center;
+    align-items: center;
+  }
+  #about .aboutBox .aboutB {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+  }
+  .aboutImg {
+    width: 30%;
+  }
+  #about p {
+    padding-top: 80px;
+    width: 70%;
+  }
+  .stackList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .stackListBox {
+    width: 45%;
+  }
+  .javascript .percentload {
+    width: 70%;
+  }
+  .PHP .percentload {
+    width: 54%;
+  }
+  .C .percentload {
+    width: 44%;
+  }
+  .Html .percentload {
+    width: 85%;
+  }
+  .eduMain {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .eduMain .info {
+    width: 45%;
+  }
+  .msgBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .msg .info {
+    width: 70%;
+  }
+  .slideImg {
+    height: 350px;
+  }
+}
